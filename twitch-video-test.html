@@ -1,0 +1,25 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<script src= "http://player.twitch.tv/js/embed/v1.js"></script>
+		<div id="player"></div>
+		<script type="text/javascript">
+			var channels = ["bobross", "deadmau5"];
+		    var options = {
+		        width: 854,
+		        height: 480,
+		        channel: "bobross", 
+		        //video: "{VIDEO_ID}"       
+		    };
+		    var player = new Twitch.Player("player", options);
+		    player.setVolume(0.5);
+
+		    var channelIndex = 1;
+		    window.setInterval(function(){
+		    	player.setChannel(channels[channelIndex % 2]);
+		    	channelIndex = channelIndex + 1;
+		    }, 10000);
+		</script>
+	</body>
+</html>
